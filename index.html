@@ -98,39 +98,68 @@
     <div class="section-label">Projects</div>
     <h2>Things I've built</h2>
 
-    <a href="https://github.com/Varsedile/PL-Report-2019-2025" class="project-card" style="margin-bottom: 1.5rem;">
-      <div class="project-type">Power BI</div>
-      <div class="project-name">Premier League Dashboard</div>
-      <div class="project-desc">Interactive analytics dashboard for Premier League stats — built with DAX measures, Power Query reshaping, and a dark-themed UI. Tracks team performance, standings, and match-level stats.</div>
-      <div class="project-tags">
-        <span class="tag">Power BI</span>
-        <span class="tag">DAX</span>
-        <span class="tag">Power Query</span>
-        <span class="tag">Data Viz</span>
+    <!-- PL DASHBOARD -->
+    <div class="project-card-wide" style="margin-bottom: 1.5rem;">
+      <div class="project-card-info">
+        <a href="https://github.com/Varsedile/PL-Report-2019-2025" class="project-link" target="_blank">
+          <div class="project-type">Power BI</div>
+          <div class="project-name">Premier League Dashboard</div>
+          <div class="project-desc">Interactive analytics dashboard for Premier League stats — built with DAX measures, Power Query reshaping, and a dark-themed UI. Tracks team performance, standings, and match-level stats.</div>
+          <div class="project-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Power Query</span>
+            <span class="tag">Data Viz</span>
+          </div>
+        </a>
       </div>
-    </a>
-
-    <!-- IMAGE GALLERY -->
-    <div class="gallery">
-      <div class="gallery-header">
-        <span class="gallery-count"><span id="current-slide">1</span> / <span id="total-slides">3</span></span>
-        <div class="gallery-nav">
-          <button class="gallery-btn" id="prev-btn" onclick="changeSlide(-1)">← Prev</button>
-          <button class="gallery-btn" id="next-btn" onclick="changeSlide(1)">Next →</button>
+      <div class="project-card-gallery">
+        <div class="gallery-header">
+          <span class="gallery-count"><span id="current-slide">1</span> / 3</span>
+          <div class="gallery-nav">
+            <button class="gallery-btn" onclick="changeSlide(-1)">← Prev</button>
+            <button class="gallery-btn" onclick="changeSlide(1)">Next →</button>
+          </div>
         </div>
-      </div>
-      <div class="gallery-track" id="gallery-track">
-        <div class="gallery-slide">
-          <img src="assets/1.jpg" alt="Dashboard screenshot 1">
-        </div>
-        <div class="gallery-slide">
-          <img src="assets/2.jpg" alt="Dashboard screenshot 2">
-        </div>
-        <div class="gallery-slide">
-          <img src="assets/3.jpg" alt="Dashboard screenshot 3">
+        <div class="gallery-viewport">
+          <div class="gallery-track" id="gallery-track">
+            <div class="gallery-slide"><img src="assets/1.jpg" alt="Dashboard screenshot 1"></div>
+            <div class="gallery-slide"><img src="assets/2.jpg" alt="Dashboard screenshot 2"></div>
+            <div class="gallery-slide"><img src="assets/3.jpg" alt="Dashboard screenshot 3"></div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- FRAGRANCE TRACKER -->
+    <div class="project-card-wide">
+      <div class="project-card-info">
+        <a href="https://github.com/Varsedile/frag-track" class="project-link" target="_blank">
+          <div class="project-type">Python, SQL</div>
+          <div class="project-name">Fragrance Price Tracker</div>
+          <div class="project-desc">A web app that tracks fragrance prices across multiple sites — featuring daily scraping, and historical price charts. Built with Python, Flask, and PostgreSQL.</div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Web Scraping</span>
+          </div>
+        </a>
+      </div>
+
+<a href="https://frag-track-app.onrender.com/" target="_blank" class="project-card-screenshot">
+    <img src="assets/4.png" alt="Fragrance Tracker Preview">
+    <div class="screenshot-overlay">
+      <span class="btn btn-primary">Visit Live Site ↗</span>
+    </div>
+  </a>
+
+</div>
+
+</div>
+    
+</div>
+    
 
   </div>
 </section>

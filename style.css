@@ -260,6 +260,12 @@ h2 {
 
 .gallery-btn:hover { border-color: var(--accent); color: var(--accent); }
 
+.gallery-viewport {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
 .gallery-track { display: flex; transition: transform 0.35s ease; }
 
 .gallery-slide { min-width: 100%; }
@@ -280,7 +286,12 @@ h2 {
 
 .gallery-hint { font-family: var(--mono); font-size: 10px; color: var(--muted); opacity: 0.5; }
 
-.gallery-slide img { width: 100%; height: 420px; object-fit: contain; display: block; background: var(--bg); }
+.gallery-slide img { 
+  width: 100%; 
+  height: auto; /* Allows the image to scale naturally without forced height */
+  display: block; 
+  /* Removed object-fit and the background color */
+}
 
 .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 
@@ -298,13 +309,107 @@ footer { text-align: center; padding: 2rem; font-family: var(--mono); font-size:
 .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+.project-card-wide {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  transition: border-color 0.2s;
+}
+
+.project-card-wide:hover { border-color: rgba(0,193,124,0.3); }
+
+.project-card-info {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border);
+}
+
+.project-link { text-decoration: none; display: block; }
+
+.project-card-gallery { display: flex; flex-direction: column; min-width: 0; }
+
+.project-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+
+.project-card-image img { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--bg); }
+
+.project-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  width: 100%;
+  height: 260px;
+  border: 2px dashed var(--border);
+  margin: 1rem;
+  border-radius: 8px;
+  width: calc(100% - 2rem);
+}
+
 @media (max-width: 700px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { gap: 1.2rem; }
   .about-grid, .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+  .project-card-wide { grid-template-columns: 1fr; }
+  .project-card-info { border-right: none; border-bottom: 1px solid var(--border); }
   .exp-item { grid-template-columns: 1fr; }
   .exp-item::before { display: none; }
   .exp-date { text-align: left; padding-right: 0; margin-bottom: 0.4rem; }
   .exp-content { padding-left: 0; }
   .exp-content::before { display: none; }
+}
+
+/* Clickable Screenshot Styling */
+.project-card-screenshot {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  background: var(--bg);
+  text-decoration: none;
+}
+
+.project-card-screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: top; /* Keeps the top of the website visible */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover Effect: Zoom Image */
+.project-card-screenshot:hover img {
+  transform: scale(1.05);
+}
+
+/* Hover Effect: Dark Overlay & Button */
+.screenshot-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(22, 27, 34, 0.75); /* Matches your --bg color */
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card-screenshot:hover .screenshot-overlay {
+  opacity: 1;
 }
