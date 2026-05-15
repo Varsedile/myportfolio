@@ -1,18 +1,13 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
+const track = document.querySelector('.track');
+const slides = document.querySelectorAll('.project-img');
+let current = 0;
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.getElementById('next-btn').addEventListener('click', () => {
+  if (current < slides.length - 1) current++;
+  track.style.transform = `translateX(-${current * 100}%)`;
+});
 
-let currentSlide = 0;
-
-function changeSlide(dir) {
-  const track = document.getElementById('gallery-track');
-  const slides = track.querySelectorAll('.gallery-slide');
-  const total = slides.length;
-  currentSlide = (currentSlide + dir + total) % total;
-  track.style.transform = `translateX(-${currentSlide * 100}%)`;
-  document.getElementById('current-slide').textContent = currentSlide + 1;
-}
+document.getElementById('prev-btn').addEventListener('click', () => {
+  if (current > 0) current--;
+  track.style.transform = `translateX(-${current * 100}%)`;
+});
