@@ -1,132 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f1e9">
+    <meta name="description" content="Vansh Khetarpal's portfolio. Data analyst building data engineering projects with SQL, Python, Databricks, Airflow and dbt.">
     <link rel="stylesheet" href="style.css">
     <title>Vansh Khetarpal's Portfolio</title>
 </head>
-
 <body>
     <header>
-        <h2>Portfolio</h2>
-        <a href="mailto:vanshkhetarpal21@gmail.com">Contact</a>
+        <a class="wordmark" href="#intro">Vansh<span>.</span></a>
+        <nav class="header-links" aria-label="Main navigation">
+            <a class="section-link" href="#portfolio-terminal" data-sql="SELECT * FROM projects;">Projects</a>
+            <a class="section-link" href="#portfolio-terminal" data-sql="SELECT * FROM experience;">Experience</a>
+            <a class="resume-link" href="assets/resumes/Vansh_Khetarpal_resume.pdf" download>Resume</a>
+            <a class="contact-link" data-contact-label="Email" href="mailto:vansh.khetarpal21@gmail.com">Contact</a>
+        </nav>
     </header>
-    <div class="main">
-        <div class="home">
-            <h1 class="intro">Hello, I am Vansh Khetarpal</h1>
-            <p class="description">I am a Data Analyst with 1 year of experience. I have completed Bachelors of Business
-                Administration, and I am super interested in Tech.</p>
+    <main class="main">
+        <section class="home" aria-labelledby="intro">
+            <h1 id="intro" class="intro"><span class="hello">Hello, I am</span> Vansh<br>Khetarpal.</h1>
+            <p class="description">I'm a <strong>data analyst</strong> who turns messy data into <mark class="description-highlight">answers people can act on</mark>. I use <strong>SQL</strong>, <strong>Python</strong> and <strong>Power BI</strong> to find what's driving the numbers, and I'm now moving into <strong class="career-focus">data engineering</strong> to build pipelines that keep that data <span class="text-underline">reliable</span>.</p>
+            <p class="location">Data Analyst → Data Engineer</p>
             <div class="home-buttons">
-                <a href="#projects-area">View Projects</a>
-                <a href="https://github.com/Varsedile">Github</a>
+                <a class="primary-button" href="#portfolio-terminal" data-sql="SELECT * FROM projects;">View Projects</a>
+                <a data-contact-label="GitHub" href="https://github.com/Varsedile" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-        </div>
-        <div id="experience-area" class="experience-container">
-            <h3>My experience</h3>
-            <div class="timeline">
-                <div class="dot"></div>
-                <div class="line"></div>
-                <div class="dot"></div>
-            </div>
-            <div class="experiences">
-                <div class="experience">
-                    <p class="date-experience">May 2024 - June 2025</p>
-                    <h4 style="margin: 6px;">Hive AI - Data Analyst</h4>
-                    <ul>
-                        <li>Analyzed complex datasets to surface actionable business insights.</li>
-                        <li>Built and maintained dashboards to track key metrics and KPIs.</li>
-                        <li>Supported ML model development and deployment across client projects.</li>
-                    </ul>
+            <p class="looking-for">Open to Data Engineer, Analytics Engineer and Data Analyst roles.</p>
+        </section>
+        <!-- Query results replace the separate portfolio sections. -->
+        <section id="portfolio-terminal" class="portfolio-terminal" aria-label="Portfolio SQLite terminal" hidden>
+            <div class="terminal-shell">
+                <div class="terminal-heading"><span class="database-name"><span aria-hidden="true">&gt;_</span> vansh.db</span><span id="terminal-status" role="status">Loading SQLite…</span></div>
+                <p class="terminal-welcome">A portfolio you can query. Pick a table below, or write some SQL.</p>
+                <form id="terminal-form">
+                    <label for="terminal-input">sqlite&gt;</label>
+                    <input id="terminal-input" type="text" placeholder="SELECT * FROM projects;" autocomplete="off" spellcheck="false" maxlength="8000" aria-describedby="terminal-hint">
+                    <button type="submit">Run ↵</button>
+                </form>
+                <div class="terminal-shortcuts" aria-label="Suggested queries">
+                    <button type="button" data-sql="SELECT * FROM projects;">projects</button>
+                    <button type="button" data-sql="SELECT * FROM experience;">experience</button>
+                    <button type="button" data-sql="SELECT * FROM education;">education</button>
+                    <button type="button" data-sql="SELECT * FROM courses;">courses</button>
+                    <button type="button" data-sql="SELECT * FROM skills;">skills</button>
+                    <button type="button" data-sql="SELECT * FROM links;">contact</button>
+                    <button type="button" data-sql=".tables">.tables</button>
+                    <button type="button" data-sql=".help">.help</button>
+                    <button type="button" data-sql=".clear">.clear</button>
                 </div>
-                <div class="experience">
-                    <p class="date-experience">July 2023 - August 2023</p>
-                    <h4 style="margin: 6px;">Reliance Retail - Marketing Intern</h4>
+                <p id="terminal-hint">Enter to run · ↑ ↓ history · read-only</p>
+            </div>
+            <div id="terminal-results" hidden></div>
+        </section>
+
+
+        <!-- Hidden source content supplies SQLite and the terminal result cards. -->
+        <div id="portfolio-content" hidden>
+        <section id="experience-area" class="experience-container" aria-labelledby="experience-title">
+            <h3 id="experience-title">My experience</h3>
+            <div class="experiences">
+                <article class="experience">
+                    <p class="date-experience">May 2024 to June 2025</p>
+                    <h4>Hive.AI · Data Analyst</h4>
+                    <ul>
+                        <li>Audited 100,000+ training samples with SQL, about 2,500 a day for over two months, to remove incorrect entries before LLM training.</li>
+                        <li>Built Python automation to filter and clean datasets, cutting manual effort by about 20%.</li>
+                        <li>Built a Power BI dashboard for self-service tracking of task completion and team performance.</li>
+                        <li>Analysed performance data in Excel, including root cause analysis of the results.</li>
+                        <li>Led a four-member team through a three-day dataset cleanup.</li>
+                    </ul>
+                </article>
+                <article class="experience">
+                    <p class="date-experience">July 2023 to August 2023</p>
+                    <h4>Reliance Retail · Marketing Intern</h4>
                     <ul>
                         <li>Analysed catchment areas to identify optimal store locations and customer reach.</li>
-                        <li>Tracked and reported on in-store engagement metrics to inform marketing strategy.</li>
-                        <li>Mapped competitor presence and foot traffic patterns for a new store launch.</li>
+                        <li>Tracked in-store engagement metrics to inform marketing strategy.</li>
+                        <li>Mapped competitor presence and foot traffic for a new store launch.</li>
                     </ul>
-                </div>
+                </article>
             </div>
-        </div>
-        <div id="projects-area" class="container">
-            <h3>My projects</h3>
+        </section>
+
+        <section id="projects-area" class="container" aria-labelledby="projects-title">
+            <h3 id="projects-title">My projects</h3>
             <div class="projects">
-                <div class="project">
-                    <div class="slider">
+                <article class="project">
+                    <div class="slider" tabindex="0" role="region" aria-label="Premier League Dashboard screenshots">
                         <div class="track">
-                            <div class="project-img">
-                                <img src="assets/1.jpg">
-                            </div>
-                            <div class="project-img">
-                                <img src="assets/2.jpg">
-                            </div>
-                            <div class="project-img">
-                                <img src="assets/3.jpg">
-                            </div>
+                            <div class="project-img"><img src="assets/project_imgs/premier_league_1.jpg" alt="Premier League Dashboard, league overview"></div>
+                            <div class="project-img"><img src="assets/project_imgs/premier_league_2.jpg" alt="Premier League Dashboard, club analytics"></div>
+                            <div class="project-img"><img src="assets/project_imgs/premier_league_3.jpg" alt="Premier League Dashboard, season archives"></div>
                         </div>
-                        <button id="prev-btn" class="btn">&lt;</button>
-                        <button id="next-btn" class="btn">&gt;</button>
                     </div>
                     <h4>Premier League Dashboard</h4>
-                    <p>Interactive analytics dashboard for Premier League stats - built with DAX measures, Power Query
-                        reshaping, and a dark-themed UI. Tracks team performance, standings, and match-level stats.</p>
-                    <a href="https://github.com/Varsedile/PL-Report-2019-2025">Check out the Project</a>
-                </div>
-                <div class="project">
-                    <img src="assets/4.png">
-                    <h4>Fragrance Price Tracker</h4>
-                    <p>A web app that tracks fragrance prices across multiple sites - featuring daily scraping, and
-                        historical price charts. Built with Python, Flask, and PostgreSQL.</p>
-                    <a href="https://github.com/Varsedile/frag-track">Check out the Project</a>
-                </div>
+                    <p>A multi-view Power BI report covering six seasons and 6,570+ goals. Built with DAX measures and Power Query, with views for league overview, club analytics and season archives, plus shot conversion rate, scatter and treemap visuals.</p>
+                    <p class="project-tools">Power BI · DAX · Power Query</p>
+                    <a href="https://github.com/Varsedile/PL-Report-2019-2025" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                </article>
+                <article class="project">
+                    <img class="project-preview" src="assets/project_imgs/fragtracker.png" alt="FragTracker homepage" loading="lazy">
+                    <h4>FragTracker</h4>
+                    <p>A fragrance price tracker across five Indian retailers. Python scrapers feed PostgreSQL, Airflow orchestrates the runs, and containerized dbt models turn raw prices into clean tables. A Flask app serves price comparisons and history.</p>
+                    <p class="project-tools">Python · Flask · Airflow · dbt · PostgreSQL · Docker</p>
+                    <a href="https://github.com/Varsedile/frag-track" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                </article>
+                <!-- These projects have no supplied screenshots. Add an image here when ready. -->
+                <article class="project">
+                    <img class="project-preview" src="assets/project_imgs/online_retail_databricks.png" alt="FragTracker homepage" loading="lazy">
+                    <h4>Online Retail Medallion Pipeline</h4>
+                    <p>A Bronze, Silver and Gold pipeline on Databricks over about seven weeks of UK e-commerce transactions. Silver fixes types, flags cancellations and removes duplicates. Gold tables cover daily revenue, top products and cancellation rate, served through a SQL dashboard and a daily scheduled job.</p>
+                    <p class="project-tools">Databricks · PySpark · Spark SQL · Delta Lake</p>
+                    <a href="https://github.com/Varsedile/online-retail-medallion-databricks" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                </article>
+                <article class="project">
+                    <img class="project-preview" src="assets/project_imgs/hr_attrition.webp" alt="FragTracker homepage" loading="lazy">
+                    <h4>HR Attrition Analysis</h4>
+                    <p>Analysed the IBM employee attrition dataset with PostgreSQL and Power BI. Found overtime to be the biggest driver, with roughly three times the attrition rate, and cross-validated the SQL and dashboard numbers in Python.</p>
+                    <p class="project-tools">PostgreSQL · Power BI · Python · Excel</p>
+                    <a href="https://github.com/Varsedile/ibm-attrition-dataset-analysis" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+                </article>
             </div>
-        </div>
-        <div class="skills-area">
-            <h3 style="padding: 0px; padding-left: 20px;">My skills</h3>
-            <div class="skill-container">
-                <div class="skill">
-                    <strong>Languages</strong>
-                    <ul>
-                        <li>Python</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <strong>Frameworks & Libraries</strong>
-                    <ul>
-                        <li>Pandas</li>
-                        <li>Numpy</li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <strong>Visualisation</strong>
-                    <ul>
-                        <li>Power BI</li>
-                    </ul>
-                </div>
-                <div class="skill">
-                    <strong>Tools</strong>
-                    <ul>
-                        <li>Excel</li>
-                        <li>Google Sheets</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+        </section>
 
+        <section id="skills-area" class="skills-area" aria-labelledby="skills-title">
+            <h3 id="skills-title">My skills</h3>
+            <div class="skill-container">
+                <article class="skill"><strong>Languages & Libraries</strong><ul><li>Python</li><li>SQL (window functions, CTEs)</li><li>Pandas</li><li>NumPy</li></ul></article>
+                <article class="skill"><strong>Data Engineering</strong><ul><li>Databricks / PySpark</li><li>Delta Lake</li><li>Airflow</li><li>dbt</li></ul></article>
+                <article class="skill"><strong>Analytics</strong><ul><li>Power BI</li><li>DAX / Power Query</li><li>Excel</li><li>Statistics</li></ul></article>
+                <article class="skill"><strong>Tools</strong><ul><li>PostgreSQL</li><li>Docker</li><li>Git</li><li>Claude, Codex, GitHub Copilot</li></ul></article>
+            </div>
+        </section>
+
+        <section class="education-area" aria-labelledby="education-title">
+            <h3 id="education-title">My education</h3>
+            <div class="education-container">
+                <article class="education"><h4>Bachelor in Business Administration</h4><p>Jagannath International Management School (GGSIPU)</p><p class="date-experience">2021 to 2024</p></article>
+            </div>
+        </section>
+        <section class="courses-area" aria-labelledby="courses-title">
+            <h3 id="courses-title">My courses & certifications</h3>
+            <div class="courses-container">
+                <article class="course"><h4>Google Data Analytics Professional Certificate</h4><p>Google</p><p class="date-experience"><time datetime="2026-03">March 2026</time></p></article>
+                <article class="course"><h4>Associate Data Analyst</h4><p>DataCamp</p><p class="date-experience"><time datetime="2026-07">July 2026</time></p></article>
+                <article class="course"><h4>Fundamentals of Financial Analysis</h4><p>London Business School</p><p class="date-experience"><time datetime="2026-07">July 2026</time></p></article>
+                <article class="course"><h4>AWS Cloud Practitioner (CLF-C02) Course</h4><p>DataCamp</p><p class="date-experience"><time datetime="2026-07">July 2026</time></p></article>
+            </div>
+        </section>
+        </div>
+        <noscript><p>Enable JavaScript to query the portfolio.</p></noscript>
+    </main>
     <footer>
+        <p class="footer-name">Vansh Khetarpal <span>· Open to work</span></p>
         <div class="social-icons">
-            <a href="assets/Vansh Khetarpal Resume.pdf"><img src="assets/link-icon.png"></a>
-            <a href="https://www.linkedin.com/in/vansh-khetarpal-904a6620b/"><img src="assets/linkedin-icon.png"></a>
+            <a data-contact-label="LinkedIn" href="https://linkedin.com/in/vansh-khetarpal" target="_blank" rel="noopener noreferrer"><img src="assets/icons/linkedin-icon.png" alt="" width="40" height="40"><span>LinkedIn</span></a>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
-
 </html>
